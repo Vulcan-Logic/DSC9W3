@@ -1,0 +1,44 @@
+---
+title: "Plotly with Rmd presentation"
+author: "Vineet W. Singh"
+date: "24 April 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R markdown presentation demonstrating "plotly"
+
+This is an R Markdown presentation which can automatically incorporate
+plots, tables and the like. 
+
+### The Data
+
+The data is the GDP of Australia between 2010 and 2016
+```{r chunk1}
+years<-c(seq(2010,2016))
+GDP<-c(1.14,1.39,1.54,1.57,1.46,1.35,1.20)
+```
+
+
+## Plotly code
+
+```{r chunk2, eval=FALSE, echo=TRUE}
+suppressPackageStartupMessages(library(plotly))
+plot_ly(x = years, y = GDP, name = "GDP between 2010 & 2016", 
+             type = 'scatter', mode = 'lines+markers', 
+             line = list(color = 'rgb(205, 12, 24)', width = 4))
+```
+
+## PLOT
+
+### GDP of Australia between 2010 and 2016 (Trillion USD)
+
+```{r chunk3}
+suppressPackageStartupMessages(library(plotly))
+plot_ly(x = years, y = GDP, name = "GDP between 2010 & 2016", 
+             type = 'scatter', mode = 'lines+markers', 
+             line = list(color = 'rgb(205, 12, 24)', width = 4))
+```
